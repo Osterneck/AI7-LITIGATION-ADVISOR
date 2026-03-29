@@ -1,7 +1,7 @@
 def get_guidance(p_win, s_press):
-    notes = []
-    if p_win < 0.20:
-        notes.append("🔴 **ADJUDICATION RISK**: Court ruling statistically unlikely.")
-    if s_press > 0.60:
-        notes.append("💰 **SETTLEMENT LEVERAGE**: High probability of bank-led resolution.")
-    return notes
+    if p_win > 0.7:
+        return ["Strong case position.", "Consider settlement leverage."]
+    elif p_win > 0.4:
+        return ["Moderate outlook.", "Review discovery documents."]
+    else:
+        return ["High risk detected.", "Consult senior counsel."]
